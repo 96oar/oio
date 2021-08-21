@@ -8,11 +8,12 @@ import (
 )
 
 func IsExist(dir string) bool {
+	exist := false
 	_, err := os.Stat(dir)
 	if !os.IsNotExist(err) {
-		return true
+		exist = true
 	}
-	return false
+	return exist
 }
 
 func CreateDir(dir string) {
